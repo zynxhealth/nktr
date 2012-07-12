@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../galen/platform/netkernel-modules/standard-module-2.0-schema-1.0.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<module version="2.0">
+    <meta>
+        <identity>
+            <uri>urn:zynx:nktr</uri>
+            <version>1.0.0</version>
+        </identity>
+        <info>
+            <name>NetKernel test runner</name>
+            <description>this module supports running groovy tests against a netkernel
+                module
+            </description>
+        </info>
+    </meta>
+    <system>
+        <dynamic/>
+    </system>
+    <rootspace name="NetKernel test runner - Development Space" uri="urn:zynx:nktr">
+        <fileset>
+            <regex>res:/etc/system/SimpleDynamicImportHook.xml</regex>
+        </fileset>
+
+        <mapper>
+            <config>
+                <endpoint>
+                    <grammar>
+                        <simple>res:/nktr/run/{uri}/{space}</simple>
+                    </grammar>
+                    <request>
+                        <identifier>active:groovy</identifier>
+                        <argument name="uri" method="as-string">[[arg:uri]]</argument>
+                        <argument name="space" method="as-string">[[arg:space]]</argument>
+                        <argument name="operator">res:/resources/runner.groovy</argument>
+                    </request>
+                </endpoint>
+            </config>
+
+            <space>
+                <fileset>
+                    <regex>res:/resources/runner.groovy</regex>
+                </fileset>
+                <import>
+                    <uri>urn:org:netkernel:lang:groovy</uri>
+                </import>
+            </space>
+        </mapper>
+
+
+    </rootspace>
+</module>

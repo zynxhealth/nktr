@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="2.0">
+    <meta>
+        <identity>
+            <uri>urn:zynx:nktr:testmodule</uri>
+            <version>1.0.0</version>
+        </identity>
+        <info>
+            <name>Zynx Nktr test module</name>
+            <description>this is a module we TDDed while developing nktr</description>
+            <icon>res:/nktr/testmodule/pub/icon.png</icon>
+        </info>
+    </meta>
+    <system>
+        <dynamic/>
+    </system>
+    <rootspace name="Zynx Nktr test module - Development Space" uri="urn:zynx:nktr:testmoduleB">
+        <mapper>
+            <config>
+                <endpoint>
+                    <grammar>
+                        <active>
+                            <identifier>active:getName</identifier>
+                            <argument name="name"/>
+                        </active>
+                    </grammar>
+
+                    <request>
+                        <identifier>active:groovy</identifier>
+                        <argument name="operator" method="as-string">
+                            <![CDATA[
+                            def request = context.getThisRequest()
+                            def name = context.source('arg:name2')
+                            context.createResponseFrom('Say hello to ' + name)]]>
+                        </argument>
+                        <argument name="name" method="as-string">[[arg:name]]</argument>
+                    </request>
+                </endpoint>
+            </config>
+            <space>
+                <import>
+                    <uri>urn:org:netkernel:lang:groovy</uri>
+                </import>
+
+            </space>
+        </mapper>
+    </rootspace>
+    <rootspace name="Zynx Nktr test module - Development Space" uri="urn:zynx:nktr:testmoduleA">
+        <mapper>
+            <config>
+                <endpoint>
+                    <grammar>
+                        <active>
+                            <identifier>active:getName</identifier>
+                            <argument name="name"/>
+                        </active>
+                    </grammar>
+                    <request>
+                        <identifier>active:groovy</identifier>
+                        <argument name="operator" method="as-string">
+                            <![CDATA[
+                            def request = context.getThisRequest()
+                            def name = context.source('arg:name')
+                            context.createResponseFrom('Say good bye2 to ' + name)]]>
+                        </argument>
+                        <argument name="name" method="as-string">[[arg:name]]</argument>
+                    </request>
+                </endpoint>
+            </config>
+            <space>
+                <import>
+                    <uri>urn:org:netkernel:lang:groovy</uri>
+                </import>
+            </space>
+        </mapper>
+    </rootspace>
+</module>
