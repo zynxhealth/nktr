@@ -1,31 +1,12 @@
-import org.junit.Test
-import static org.junit.Assert.assertEquals
+package zynx.nktr
 
-class CoreDataTests {
-    @Test
-    void testGetNameEndpoint() {
-        def space = 'urn:zynx:nktr:testmoduleA'
-        def uri = 'active:getName2+name@John'
+class Runner {
 
-        String results = callNKResource(space, uri)
-
-        assertEquals('Say hello to John', results)
-    }
-
-
-
-
-
-
-
-    private String callNKResource(String space, String uri) {
+    def String callNKResource(String space, String uri) {
         String request = generateRequest(space, uri)
         String results = request.toURL().getText()
         results
     }
-
-
-
 
     def generateRequest(space, uri) {
         def encodedSpace = java.net.URLEncoder.encode(space)
