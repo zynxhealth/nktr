@@ -1,11 +1,16 @@
 package zynx.nktr
 
-/**
- * Created with IntelliJ IDEA.
- * User: family
- * Date: 7/16/12
- * Time: 9:02 PM
- * To change this template use File | Settings | File Templates.
- */
-class NetKernelException {
+class NetKernelException extends Exception {
+
+    NetKernelException(String s) {
+        super(s)
+    }
+
+    NetKernelException(String s, Throwable throwable) {
+        super(s, throwable)
+    }
+
+    NetKernelException(Throwable throwable) {
+        super(throwable)
+    }
 }

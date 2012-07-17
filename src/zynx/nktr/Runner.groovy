@@ -5,6 +5,10 @@ class Runner {
     def String callNKResource(String space, String uri) {
         String request = generateRequest(space, uri)
         String results = request.toURL().getText()
+
+        if (results.startsWith('<ex>')) {
+            throw new NetKernelException(results)
+        }
         results
     }
 

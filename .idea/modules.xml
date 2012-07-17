@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/netkernel-testrunner.iml" filepath="$PROJECT_DIR$/netkernel-testrunner.iml" />
       <module fileurl="file://$PROJECT_DIR$/../netkernel/modules/urn.zynx.nktr/urn.zynx.nktr.iml" filepath="$PROJECT_DIR$/../netkernel/modules/urn.zynx.nktr/urn.zynx.nktr.iml" />
       <module fileurl="file://$PROJECT_DIR$/../netkernel/modules/urn.zynx.nktr.testmodule/urn.zynx.nktr.testmodule.iml" filepath="$PROJECT_DIR$/../netkernel/modules/urn.zynx.nktr.testmodule/urn.zynx.nktr.testmodule.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zynx.nktr.iml" filepath="$PROJECT_DIR$/zynx.nktr.iml" />
     </modules>
   </component>
 </project>
