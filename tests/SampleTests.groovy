@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals
 class SampleTests {
     @Test
     void testGetValidEndpoint() {
-        def space = 'urn:zynx:nktr:testmoduleA'
+        def space = 'urn:zynx:nktr:testmoduleB'
         def uri = 'active:getName+name@John'
         Runner runner = new Runner()
 
